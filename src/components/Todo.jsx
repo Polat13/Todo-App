@@ -19,6 +19,10 @@ const Todo = () => {
         });
     };
 
+    const deleteTodo = (id) => {
+        return setTodos((prevTodos) => (prevTodos.filter((todo) => todo.id !== id)))
+    };
+
     const addTodo = () => {
         const inputText = data.current.value.trim();
         if(inputText == ""){
@@ -57,7 +61,7 @@ const Todo = () => {
 
             <div className="pt-2">
                 {
-                    todos.map((todo) =>(<Todo_Item key={todo.id} todo={todo} toogle={toogle}/>))
+                    todos.map((todo) =>(<Todo_Item key={todo.id} todo={todo} toogle={toogle} deleteTodo={deleteTodo}/>))
                 }
             </div>
         </div>
