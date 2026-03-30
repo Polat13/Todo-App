@@ -5,7 +5,7 @@ import Todo_Item from "./Todo_Item";
 
 const Todo = () => {
 
-    const [todos,setTodos] = useState([]);
+    const [todos,setTodos] = useState(localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : []);
     const data = useRef();
 
     const toogle = (id) => {
@@ -40,7 +40,7 @@ const Todo = () => {
     }
 
     useEffect(() => {
-            console.log(todos);
+            localStorage.setItem("todos",JSON.stringify(todos));
         }, [todos])
 
     return (
