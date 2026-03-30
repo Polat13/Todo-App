@@ -10,7 +10,7 @@ const Todo = () => {
 
     const toogle = (id) => {
         return setTodos((prevTodos) => {
-            prevTodos.map((todo) => {
+            return prevTodos.map((todo) => {
                 if(todo.id == id){
                     return{...todo, isComplete: !todo.isComplete}
                 }
