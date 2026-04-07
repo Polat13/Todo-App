@@ -30,7 +30,7 @@ const Todo = () => {
         }
 
         const newTodo = {
-            id:todos.length +1,
+            id:Date.now(),
             text:inputText,
             isComplete:false,
         }
